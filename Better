@@ -1,0 +1,266 @@
+package pl.tt;
+import java.sql.SQLOutput;
+import java.util.Scanner;
+import java.lang.Math;
+
+public class Main {
+
+
+    public static double dodawanie(double pierwszaLiczba, double drugaLiczba) {
+        return pierwszaLiczba + drugaLiczba;
+    }
+
+    public static double odejmowanie(double pierwszaLiczba, double drugaLiczba) {
+        return pierwszaLiczba - drugaLiczba;
+    }
+
+    public static double dzielenie(double pierwszaLiczba, double drugaLiczba) {
+        return pierwszaLiczba / drugaLiczba;
+    }
+
+    public static double mnozenie(double pierwszaLiczba, double drugaLiczba) {
+        return pierwszaLiczba * drugaLiczba;
+    }
+
+    public static double modulo(double pierwszaLiczba, double drugaLiczba) {
+        return pierwszaLiczba % drugaLiczba;
+    }
+
+    public static double sinus(double kątA) {
+        return Math.sin(kątA);
+    }
+
+    public static double cosinus(double kątA) {
+        return Math.cos(kątA);
+    }
+
+    public static double power(double podstawa, double wykładnik) {
+        return Math.pow(podstawa, wykładnik);
+    }
+
+    public static double poleProstokata(double bok1, double bok2) {
+        return bok1 * bok2;
+    }
+
+    public static double poleTrapezu(double podstawa1, double podstawa2, double wysokosc) {
+        return ((podstawa1 + podstawa2) * wysokosc) / 2;
+    }
+
+    public static double poleKola(double promien) {
+        final double pi = 3.14;
+        return pi * promien * promien;
+    }
+
+    public static double obwodProstokata(double bok1, double bok2) {
+        return (bok1 + bok2) * 2;
+    }
+
+    public static double owbodTrapezu(double bok1, double bok2, double bok3, double bok4) {
+        return bok1 + bok2 + bok3 + bok4;
+    }
+
+    public static double obwodKola(double promien) {
+        final double pi = 3.14;
+        return 2 * pi * promien;
+    }
+
+    public static void main(String[] args) {
+
+        Scanner keyboard = new Scanner(System.in);
+
+        System.out.println("Chcesz wybrać kalkulator liczbowy[numerical] czy geometryczny[geometric]?");
+        String kalkulator = keyboard.nextLine();
+
+        switch (kalkulator) {
+
+            case ("numerical"):
+                System.out.println("Chcesz wykonać dodawanie[add], odejmowanie[subtract], dzielenie[divide],mnozenie[multiply],modulo[modulo], sinus[sinus], cosinus[cosinus], potegowanie[power]");
+                String numerical = keyboard.nextLine();
+
+                switch (numerical) {
+
+                    case ("add"):
+                        System.out.println("Podaj 1 liczbe:");
+                        double a = keyboard.nextDouble();
+                        System.out.println("Podaj 2 liczbe:");
+                        double b = keyboard.nextDouble();
+
+                        System.out.println(dodawanie(a, b));
+                        break;
+
+
+                    case ("subtract"):
+                        System.out.println("Podaj 1 liczbe:");
+                        double c = keyboard.nextDouble();
+                        System.out.println("Podaj 2 liczbe:");
+                        double d = keyboard.nextDouble();
+
+                        System.out.println(odejmowanie(c, d));
+                        break;
+
+
+                    case ("divide"):
+                        System.out.println("Podaj 1 liczbe:");
+                        double e = keyboard.nextDouble();
+                        System.out.println("Podaj 2 liczbe:");
+                        double f = keyboard.nextDouble();
+
+                        System.out.println(dzielenie(e, f));
+                        break;
+
+
+                    case ("multiply"):
+                        System.out.println("Podaj 1 liczbe:");
+                        double g = keyboard.nextDouble();
+                        System.out.println("Podaj 2 liczbe:");
+                        double h = keyboard.nextDouble();
+
+                        System.out.println(mnozenie(g, h));
+                        break;
+
+
+                    case ("modulo"):
+                        System.out.println("Podaj 1 liczbe:");
+                        double i = keyboard.nextDouble();
+                        System.out.println("Podaj 2 liczbe:");
+                        double j = keyboard.nextDouble();
+
+                        System.out.println(modulo(i, j));
+                        break;
+
+                    case ("sinus"):
+                        System.out.println("Podaj wartość kąta a (w radianach):");
+                        double k = keyboard.nextDouble();
+
+                        System.out.println(sinus(k));
+                        break;
+
+                    case ("cosinus"):
+                        System.out.println("Podaj wartość kąta a (w radianach):");
+                        double l = keyboard.nextDouble();
+
+                        System.out.println(cosinus(l));
+                        break;
+
+                    case ("power"):
+                        System.out.println("Podaj podstawę potęgi:");
+                        double m = keyboard.nextDouble();
+                        System.out.println("Podaj wykładnik potęgi:");
+                        double n = keyboard.nextDouble();
+
+                        System.out.println(power(m, n));
+                        break;
+
+
+                    default:
+                        System.out.println("Brak takiej odpowiedzi.");
+
+                }
+
+            case ("geometric"):
+
+                System.out.println("Chcesz obliczyć pole czy obwód?");
+                String geometric = keyboard.nextLine();
+
+
+                switch (geometric) {
+                    case ("pole"):
+                        System.out.println("Chcesz je obliczyć dla prostokąta, trapezu czy koła?");
+                        String vertical = keyboard.nextLine();
+
+                        switch (vertical) {
+                            case ("prostokata"):
+                                System.out.println("Podaj 1 bok:");
+                                double a = keyboard.nextDouble();
+                                System.out.println("Podaj 2 bok");
+                                double b = keyboard.nextDouble();
+
+                                System.out.println(poleProstokata(a, b));
+                                break;
+
+                            case ("trapezu"):
+                                System.out.println("Podaj 1 podstawę:");
+                                double c = keyboard.nextDouble();
+                                System.out.println("Podaj 2 podstawę");
+                                double d = keyboard.nextDouble();
+                                System.out.println("Podaj wysokość:");
+                                double e = keyboard.nextDouble();
+
+                                System.out.println(poleTrapezu(c, d, e));
+                                break;
+
+                            case ("kola"):
+                                System.out.println("Podaj promień:");
+                                double f = keyboard.nextDouble();
+
+                                System.out.println(poleKola(f));
+
+
+                        }
+                    case ("obwod"):
+                        System.out.println("Chcesz go obliczyć dla prostokąta, trapezu czy koła?");
+                        String technical = keyboard.nextLine();
+
+                        switch (technical) {
+                            case ("prostokata"):
+                                System.out.println("Podaj 1 bok:");
+                                double a = keyboard.nextDouble();
+                                System.out.println("Podaj 2 bok");
+                                double b = keyboard.nextDouble();
+
+                                System.out.println(obwodProstokata(a, b));
+                                break;
+
+                            case ("trapezu"):
+                                System.out.println("Podaj 1 bok:");
+                                double c = keyboard.nextDouble();
+                                System.out.println("Podaj 2 bok:");
+                                double d = keyboard.nextDouble();
+                                System.out.println("Podaj 3 bok:");
+                                double e = keyboard.nextDouble();
+                                System.out.println("Podaj 4 bok:");
+                                double f = keyboard.nextDouble();
+
+                                System.out.println(owbodTrapezu(c, d, e, f));
+                                break;
+
+                            case ("kola"):
+                                System.out.println("Podaj promień:");
+                                double g = keyboard.nextDouble();
+
+                                System.out.println(obwodKola(g));
+                                break;
+
+                        }
+                }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
